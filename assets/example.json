@@ -1,0 +1,11 @@
+{
+  "width": 1600,
+  "height": 2000,
+  "columns": 2,
+  "labels": true,
+  "compounds": [
+    {"name": "Caffeine", "smiles": "Cn1c(=O)c2c(ncn2C)n(C)c1=O", "source": "https://pubchem.ncbi.nlm.nih.gov/compound/2519"},
+    {"name": "Aspirin", "smiles": "CC(=O)Oc1ccccc1C(=O)O", "source": "https://pubchem.ncbi.nlm.nih.gov/compound/2244"},
+    {"name": "Ethanol", "smiles": "CCO", "group": "secondary", "source": "https://pubchem.ncbi.nlm.nih.gov/compound/702"}
+  ]
+}

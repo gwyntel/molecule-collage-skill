@@ -1,0 +1,4 @@
+interface:
+  display_name: "Molecule Collage"
+  short_description: "Turn chemical structures into photo-filled art"
+  default_prompt: "Use $molecule-collage to turn my photo and substance list into a verified molecular collage."
