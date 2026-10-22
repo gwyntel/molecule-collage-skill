@@ -32,8 +32,7 @@ Install globally for Hermes Agent:
 npx skills add gwyntel/molecule-collage-skill --skill molecule-collage --agent hermes-agent -g -y
 ```
 
-For other supported agents, replace `hermes-agent` with that agent's identifier.
-To preview the repository's available skills without installing, run
+Claude Code and Codex are supported by current Vercel Skills CLI releases; replace `hermes-agent` with `claude-code` or `codex` respectively, subject to the installed CLI's supported target list. This distributes instructions/files only, not runtime capabilities. To preview the repository's available skills without installing, run
 `npx skills add gwyntel/molecule-collage-skill --list`.
 
 After installation, ask your agent: “Use molecule-collage to make a photo-filled
