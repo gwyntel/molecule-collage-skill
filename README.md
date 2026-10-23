@@ -22,6 +22,8 @@ chemistry, render, inspect, revise, and verify the entire exported image.
 
 ## Install with Vercel Skills CLI
 
+Prerequisite: Node.js 22.20 or later (required by the Vercel Skills CLI).
+
 This repository is a single-skill package. The root `SKILL.md` contains the required
 Agent Skills frontmatter (`name` and `description`), so no directory restructuring
 is needed. Canonical source: https://github.com/gwyntel/molecule-collage-skill
@@ -44,7 +46,11 @@ and references ship alongside it.
 Run `npx skills update molecule-collage -g -y` to update the global installation. This applies to repository-source installs; local-path installs may require reinstalling from the original path.
 If installed at project scope, run `npx skills update molecule-collage -y` from that
 project instead. To reinstall directly from this source, rerun the `skills add`
-command above. For a manual Git clone, run `git -C YOUR_SKILLS_DIR/molecule-collage pull --ff-only` to update it.
+command above. For a manual Git clone, run:
+
+```bash
+git -C YOUR_SKILLS_DIR/molecule-collage pull --ff-only
+```
 
 ### Troubleshooting
 
