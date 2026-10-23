@@ -41,11 +41,10 @@ and references ship alongside it.
 
 ### Update
 
-Run `npx skills update molecule-collage -g -y` to update the global installation.
+Run `npx skills update molecule-collage -g -y` to update the global installation. This applies to repository-source installs; local-path installs may require reinstalling from the original path.
 If installed at project scope, run `npx skills update molecule-collage -y` from that
 project instead. To reinstall directly from this source, rerun the `skills add`
-command above. For a manual Git clone, `git -C YOUR_SKILLS_DIR/molecule-collage
-pull --ff-only` updates it.
+command above. For a manual Git clone, run `git -C YOUR_SKILLS_DIR/molecule-collage pull --ff-only` to update it.
 
 ### Troubleshooting
 
