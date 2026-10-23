@@ -20,17 +20,50 @@ chemistry, render, inspect, revise, and verify the entire exported image.
 - Guides the agent through visual inspection and targeted revisions; offers three
   alternatives when a subjective choice needs the user's eye.
 
-## Install as an agent skill
+## Install with Vercel Skills CLI
 
-Clone into your agent's skills directory using `molecule-collage` as the folder name:
+Prerequisite: Node.js 22.20 or later (required by the Vercel Skills CLI).
+
+This repository is a single-skill package. The root `SKILL.md` contains the required
+Agent Skills frontmatter (`name` and `description`), so no directory restructuring
+is needed. Canonical source: https://github.com/gwyntel/molecule-collage-skill
+
+Install globally for Hermes Agent:
 
 ```bash
-git clone https://github.com/gwyntel/molecule-collage-skill YOUR_SKILLS_DIR/molecule-collage
+npx skills add gwyntel/molecule-collage-skill --skill molecule-collage --agent hermes-agent -g -y
 ```
 
-For example, `YOUR_SKILLS_DIR` may be `~/.codex/skills` or `~/.hermes/skills`.
-Then ask: “Use molecule-collage to make a photo-filled collage of these substances.”
-The entry point is [SKILL.md](SKILL.md).
+Claude Code and Codex are supported by current Vercel Skills CLI releases; replace `hermes-agent` with `claude-code` or `codex` respectively, subject to the installed CLI's supported target list. This distributes instructions/files only, not runtime capabilities. To preview the repository's available skills without installing, run
+`npx skills add gwyntel/molecule-collage-skill --list`.
+
+After installation, ask your agent: “Use molecule-collage to make a photo-filled
+collage of these substances.” The entry point is [SKILL.md](SKILL.md); the renderer
+and references ship alongside it.
+
+### Update
+
+Run `npx skills update molecule-collage -g -y` to update the global installation. This applies to repository-source installs; local-path installs may require reinstalling from the original path.
+If installed at project scope, run `npx skills update molecule-collage -y` from that
+project instead. To reinstall directly from this source, rerun the `skills add`
+command above. For a manual Git clone, run:
+
+```bash
+git -C YOUR_SKILLS_DIR/molecule-collage pull --ff-only
+```
+
+### Troubleshooting
+
+- **Skill not discovered:** confirm the installed name is `molecule-collage` and
+  that your agent supports skills from its configured skill directory. This repo
+  intentionally uses root `SKILL.md` discovery; its frontmatter must retain valid
+  YAML `name` and `description` fields.
+- **Wrong scope or agent:** specify `-g` for global or omit it for project scope;
+  pass the supported agent identifier with `--agent` during installation.
+- **Permission errors:** check write access to the selected agent skills directory;
+  use project scope when you cannot write to the global directory.
+- **Renderer dependency errors:** CLI installation distributes the instructions and
+  files, not Python dependencies. Follow “Run the renderer directly” below.
 
 ## Run the renderer directly
 
