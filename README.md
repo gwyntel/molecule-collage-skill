@@ -1,3 +1,5 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/gwyntel/molecule-collage-skill)
+
 # Molecule Collage
 
 An agent skill for turning a substance list and a photograph into molecular art.
